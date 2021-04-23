@@ -1,14 +1,17 @@
-import Navbar from "./Components/Navbar/Navbar";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Homepage from "./Pages/Homepage/Homepage";
+import AppLayout from "./Components/AppLayout/AppLayout";
 
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <div className="bg-gray-900">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl p-4 hover:backdrop-filter hover:backdrop-blur-lg rounded-lg text-white">
-          Hello
-        </div>
-      </div>
+      <AppLayout>
+        <Router>
+          <Switch>
+            <Route path="/" component={Homepage} exact />
+          </Switch>
+        </Router>
+      </AppLayout>
     </div>
   );
 };
